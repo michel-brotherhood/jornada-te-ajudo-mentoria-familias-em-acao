@@ -6,51 +6,75 @@ import heartPuzzle from "@/assets/heart-puzzle.ico";
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Maria Silva",
-      role: "Mãe de criança autista",
-      content: "Esse curso transformou minha forma de ver o autismo. Finalmente consegui entender meu filho e criar uma conexão real com ele. Gratidão eterna!",
+      name: "Mariana Costa",
+      role: "Mãe atípica",
+      content: "A Mentoria Família em Ação mudou completamente minha perspectiva. Agora tenho clareza sobre como ajudar meu filho e não me sinto mais sozinha nessa jornada.",
       rating: 5
     },
     {
-      name: "João Santos",
-      role: "Professor de educação especial",
-      content: "Material completo e acessível. A forma como é explicado torna tudo muito mais fácil de aplicar no dia a dia. Recomendo muito!",
+      name: "Juliana Mendes",
+      role: "Mãe de autista não verbal",
+      content: "Carol me ensinou a enxergar além do autismo e a encontrar força que eu nem sabia que tinha. A mentoria é transformadora!",
       rating: 5
     },
     {
-      name: "Ana Paula",
-      role: "Terapeuta ocupacional",
-      content: "Um curso que vai além da teoria. As estratégias práticas me ajudaram tanto na vida profissional quanto pessoal. Vale cada minuto!",
+      name: "Patricia Alves",
+      role: "Mãe atípica",
+      content: "Finalmente encontrei um espaço onde sou compreendida. A Carol compartilha sua experiência real e isso faz toda a diferença. Saí da exaustão para a ação!",
       rating: 5
     },
     {
-      name: "Carlos Eduardo",
-      role: "Pai e educador",
-      content: "Conteúdo sensível e profundo. Senti que finalmente alguém entendia as minhas dúvidas e medos. Curso essencial para todos!",
+      name: "Amanda Silva",
+      role: "Mãe e cuidadora",
+      content: "A mentoria me deu ferramentas práticas que uso todos os dias. Aprendi a cuidar do meu filho E de mim mesma. Gratidão eterna!",
       rating: 5
     },
     {
-      name: "Patrícia Oliveira",
-      role: "Psicóloga infantil",
-      content: "Como profissional da área, fiquei impressionada com a qualidade do conteúdo. Um material que recomendo para todos os meus pacientes!",
+      name: "Fernanda Oliveira",
+      role: "Mãe atípica",
+      content: "Sair da sobrevivência para protagonista da minha história foi possível graças à Carol. A Mentoria Família em Ação é essencial!",
       rating: 5
     },
     {
-      name: "Roberto Lima",
-      role: "Avô de adolescente autista",
-      content: "Nunca é tarde para aprender. Este curso me deu ferramentas para me conectar melhor com meu neto. Muito obrigado!",
+      name: "Luciana Santos",
+      role: "Mãe de TEA nível 3",
+      content: "Carol entende de verdade o que vivemos porque ela vive isso também. A conexão é real e os resultados aparecem rapidamente.",
       rating: 5
     },
     {
-      name: "Juliana Costa",
-      role: "Educadora especial",
-      content: "Informações práticas que fazem toda a diferença no dia a dia escolar. Curso indispensável para educadores!",
+      name: "Roberta Lima",
+      role: "Mãe atípica",
+      content: "Depois da mentoria, minha casa virou mais leve, minha relação com meu filho melhorou e eu aprendi a me valorizar. Melhor investimento!",
       rating: 5
     },
     {
-      name: "Fernando Alves",
-      role: "Pai de gêmeos autistas",
-      content: "Encontrei neste curso o apoio e conhecimento que tanto precisava. Hoje me sinto mais preparado para ajudar meus filhos!",
+      name: "Camila Rodrigues",
+      role: "Mãe e profissional",
+      content: "A Carol tem um dom especial de transformar desespero em esperança. A mentoria me deu direção quando eu mais precisava.",
+      rating: 5
+    },
+    {
+      name: "Daniela Ferreira",
+      role: "Mãe atípica",
+      content: "Aprendi que cuidar de mim não é egoísmo. A mentoria me ensinou a equilibrar maternidade atípica com autocuidado. Transformador!",
+      rating: 5
+    },
+    {
+      name: "Vanessa Souza",
+      role: "Mãe de autista",
+      content: "Carol não vende ilusões, ela mostra o caminho real. A Mentoria Família em Ação é para quem quer resultados de verdade!",
+      rating: 5
+    },
+    {
+      name: "Adriana Martins",
+      role: "Mãe atípica",
+      content: "Finalmente entendi que não preciso ser perfeita, preciso ser presente. A mentoria me libertou da culpa e me deu segurança.",
+      rating: 5
+    },
+    {
+      name: "Renata Barbosa",
+      role: "Mãe e cuidadora",
+      content: "A abordagem da Carol é única: prática, amorosa e transformadora. Saí da mentoria sabendo exatamente o que fazer!",
       rating: 5
     }
   ];
@@ -65,10 +89,10 @@ const Testimonials = () => {
             ))}
           </div>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4">
-            O Que Nossos <span className="text-coral">Clientes Dizem</span>
+            O Que Mães Atípicas <span className="text-coral">Estão Dizendo</span>
           </h2>
-          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-            Avaliações reais de famílias que transformaram suas jornadas
+          <p className="text-base md:text-lg text-white max-w-2xl mx-auto">
+            Depoimentos reais de quem transformou a maternidade atípica com a mentoria
           </p>
         </div>
 
@@ -113,7 +137,7 @@ const Testimonials = () => {
                       </div>
                     </div>
 
-                    <p className="text-xs md:text-sm text-muted-foreground leading-relaxed flex-1">
+                    <p className="text-xs md:text-sm text-white leading-relaxed flex-1">
                       "{testimonial.content}"
                     </p>
                   </div>
