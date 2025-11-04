@@ -63,10 +63,14 @@ const Hero = () => {
               <div className="pt-4">
                 <Button 
                   size="lg" 
-                  className="w-full md:w-auto text-lg px-12 py-7 bg-gradient-to-r from-white via-primary/30 to-white text-background font-bold rounded-full shadow-lg hover:shadow-[0_0_30px_rgba(0,217,163,0.4)] transition-all duration-300 animate-pulse-slow border border-primary/20"
+                  className="w-full md:w-auto text-lg px-12 py-7 bg-gradient-to-r from-white to-primary/80 text-background font-bold rounded-full shadow-lg hover:shadow-[0_0_30px_rgba(0,217,163,0.5)] transition-all duration-300 animate-pulse-slow group relative overflow-hidden"
                   onClick={scrollToEnroll}
                 >
-                  Quero participar da mentoria
+                  <span className="relative z-10">Quero participar da mentoria</span>
+                  <svg className="relative z-10 inline-block ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                  <div className="absolute inset-0 bg-gradient-to-r from-white via-primary/60 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </Button>
               </div>
             </div>
