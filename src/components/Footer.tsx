@@ -1,6 +1,6 @@
 // Desenvolvido por Michel Brotherhood
 import { Heart, Instagram, Facebook, Users } from "lucide-react";
-import logoFooter from "@/assets/logo-footer.png";
+import logoFooter from "@/assets/logo-teajudo.webp";
 
 const Footer = () => {
   return (

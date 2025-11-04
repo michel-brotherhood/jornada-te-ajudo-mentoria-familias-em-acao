@@ -45,14 +45,14 @@ const ForWho = () => {
           {audience.map((item, index) => (
             <Card 
               key={index} 
-              className="p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-2 hover:border-primary/40 animate-fade-in bg-gradient-to-br from-card to-primary/5"
+              className="p-8 hover:shadow-[0_0_40px_rgba(0,217,163,0.3)] transition-all duration-300 hover:-translate-y-2 border border-primary/20 hover:border-primary/40 animate-fade-in bg-white/95 backdrop-blur-sm group"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="flex flex-col items-center text-center">
-                <div className={`mb-4 p-4 rounded-full bg-gradient-to-br from-background to-muted ${item.color}`}>
-                  <item.icon className="w-8 h-8 transition-transform duration-300 hover:scale-110" />
+                <div className={`mb-4 p-4 rounded-full bg-gradient-to-br from-primary/10 to-primary/5 ${item.color} group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg group-hover:shadow-[0_0_30px_rgba(0,217,163,0.4)]`}>
+                  <item.icon className="w-8 h-8 group-hover:animate-pulse" />
                 </div>
-                <h3 className="text-xl font-bold mb-3">{item.title}</h3>
+                <h3 className="text-xl font-bold mb-3 text-background">{item.title}</h3>
                 <p className="text-muted-foreground">{item.description}</p>
               </div>
             </Card>
