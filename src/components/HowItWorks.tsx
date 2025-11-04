@@ -53,7 +53,7 @@ const HowItWorks = () => {
             <ul className="space-y-4 text-base md:text-lg text-muted-foreground">
               <li className="flex items-start gap-3">
                 <span className="text-primary font-bold mt-1">⦁</span>
-                <span>Entender de forma prática como estimular o desenvolvimento do seu filho(a);</span>
+                <span>Entender de forma prática como estimular o desenvolvimento da criança autista;</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-primary font-bold mt-1">⦁</span>
@@ -65,7 +65,7 @@ const HowItWorks = () => {
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-primary font-bold mt-1">⦁</span>
-                <span>E redescobrir o prazer de viver a maternidade com leveza e propósito.</span>
+                <span>Redescobrir, juntos, o prazer de educar e maternar com mais leveza, conexão e sentido.</span>
               </li>
             </ul>
           </Card>

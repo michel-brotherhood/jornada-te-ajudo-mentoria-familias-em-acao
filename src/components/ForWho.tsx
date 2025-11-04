@@ -18,18 +18,25 @@ const ForWho = () => {
       bgGradient: "from-primary/10 to-primary/5"
     },
     {
-      icon: Stethoscope,
-      title: "Famílias em Transição",
-      description: "Com diagnóstico recente ou em processo de investigação",
+      icon: GraduationCap,
+      title: "Educadores",
+      description: "Que desejam compreender melhor e apoiar crianças atípicas",
       color: "text-[#cb71bc]",
       bgGradient: "from-[#cb71bc]/10 to-[#cb71bc]/5"
     },
     {
-      icon: GraduationCap,
-      title: "Quem Busca Evolução",
-      description: "E quer uma maternidade mais leve, consciente e assertiva",
+      icon: Stethoscope,
+      title: "Famílias em Transição",
+      description: "Com diagnóstico recente ou em processo de investigação",
       color: "text-primary",
       bgGradient: "from-primary/10 to-primary/5"
+    },
+    {
+      icon: Heart,
+      title: "Quem Busca Evolução",
+      description: "E quer uma maternidade mais leve, consciente e assertiva",
+      color: "text-[#cb71bc]",
+      bgGradient: "from-[#cb71bc]/10 to-[#cb71bc]/5"
     }
   ];
 
