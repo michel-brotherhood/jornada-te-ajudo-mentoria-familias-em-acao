@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo-teajudo.webp";
-import carolPhoto from "@/assets/carol-professional-new.webp";
+import carolPhoto from "@/assets/carol-hero.jpeg";
 
 const Hero = () => {
   const scrollToEnroll = () => {
@@ -16,11 +16,6 @@ const Hero = () => {
       </div>
 
       <div className="container mx-auto px-4 py-16 md:py-20 relative z-10">
-        {/* Logo */}
-        <div className="mb-12 flex justify-center animate-fade-in">
-          <img src={logo} alt="Mentoria Família em Ação" className="h-16 md:h-20 w-auto opacity-90" />
-        </div>
-
         {/* Main Content */}
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
@@ -39,6 +34,11 @@ const Hero = () => {
 
             {/* Right: Copy */}
             <div className="space-y-6 animate-fade-in order-1 md:order-2 text-center md:text-left">
+              {/* Logo above title */}
+              <div className="flex justify-center md:justify-start mb-4">
+                <img src={logo} alt="Jornada TEAjudo" className="h-12 md:h-16 w-auto opacity-90" />
+              </div>
+              
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                 <span className="text-foreground">Mentoria</span>
                 <br />
