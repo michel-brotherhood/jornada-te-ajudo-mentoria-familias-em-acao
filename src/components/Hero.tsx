@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo-teajudo.webp";
 import carolPhoto from "@/assets/carol-professional-new.webp";
 
 const Hero = () => {
@@ -26,13 +26,13 @@ const Hero = () => {
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
             {/* Left: Photo */}
             <div className="flex justify-center md:justify-end animate-fade-in order-2 md:order-1">
-              <div className="relative">
+              <div className="relative w-full max-w-md">
                 {/* Neon glow effect */}
-                <div className="absolute inset-0 bg-primary/20 rounded-full blur-3xl scale-110"></div>
+                <div className="absolute inset-0 bg-primary/10 rounded-2xl blur-2xl"></div>
                 <img 
                   src={carolPhoto} 
                   alt="Carol Magalhães - Mentora" 
-                  className="relative rounded-full w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 object-cover border-2 border-primary/40 shadow-[0_0_80px_rgba(0,217,163,0.3)]"
+                  className="relative rounded-2xl w-full h-auto object-cover border border-primary/30 shadow-[0_0_60px_rgba(0,217,163,0.25)]"
                 />
               </div>
             </div>
@@ -63,7 +63,7 @@ const Hero = () => {
               <div className="pt-4">
                 <Button 
                   size="lg" 
-                  className="w-full md:w-auto text-lg px-12 py-7 bg-primary hover:bg-primary/90 text-primary-foreground font-bold shadow-[0_0_40px_rgba(0,217,163,0.4)] hover:shadow-[0_0_60px_rgba(0,217,163,0.6)] transition-all duration-300"
+                  className="w-full md:w-auto text-lg px-12 py-7 bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_100%] hover:bg-right text-primary-foreground font-bold shadow-[0_0_40px_rgba(0,217,163,0.5)] hover:shadow-[0_0_60px_rgba(0,217,163,0.7)] transition-all duration-500 animate-pulse-slow"
                   onClick={scrollToEnroll}
                 >
                   Quero participar da mentoria
