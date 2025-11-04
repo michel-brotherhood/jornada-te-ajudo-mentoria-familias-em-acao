@@ -49,8 +49,8 @@ const ForWho = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="flex flex-col items-center text-center">
-                <div className={`mb-4 p-4 rounded-full bg-gradient-to-br from-primary/10 to-primary/5 ${item.color} group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg group-hover:shadow-[0_0_30px_rgba(0,217,163,0.4)]`}>
-                  <item.icon className="w-8 h-8 group-hover:animate-pulse" />
+                <div className={`mb-4 p-4 rounded-full bg-gradient-to-br from-primary/10 to-primary/5 ${item.color} animate-float-icon animate-glow-pulse shadow-lg`}>
+                  <item.icon className="w-8 h-8" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-background">{item.title}</h3>
                 <p className="text-muted-foreground">{item.description}</p>
