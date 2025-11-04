@@ -41,13 +41,20 @@ const CTA = () => {
             </div>
             
             <div className="text-center space-y-4 md:space-y-6">
-              <div className="bg-gradient-to-r from-primary via-secondary to-accent rounded-xl p-6 md:p-8 shadow-xl">
-                <p className="text-sm sm:text-base text-white/90 mb-3">Valor total da mentoria:</p>
-                <div className="flex flex-col items-center justify-center gap-2">
-                  <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white">
-                    R$ 4.997,00
-                  </span>
-                  <p className="text-base sm:text-lg text-white/90">Opções à vista ou parceladas disponíveis</p>
+              <div className="relative group">
+                {/* 3D Shadow Layers */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/80 to-primary/60 rounded-xl transform translate-x-2 translate-y-2 blur-sm"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-primary/60 to-primary/40 rounded-xl transform translate-x-1 translate-y-1"></div>
+                
+                {/* Main Card */}
+                <div className="relative bg-gradient-to-br from-primary via-primary/90 to-primary/70 rounded-xl p-6 md:p-8 shadow-[0_0_50px_rgba(0,217,163,0.4)] group-hover:shadow-[0_0_70px_rgba(0,217,163,0.6)] transition-all duration-300">
+                  <p className="text-sm sm:text-base text-white/90 mb-3">Valor total da mentoria:</p>
+                  <div className="flex flex-col items-center justify-center gap-2">
+                    <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.5)]">
+                      R$ 4.997,00
+                    </span>
+                    <p className="text-base sm:text-lg text-white/90">Opções à vista ou parceladas disponíveis</p>
+                  </div>
                 </div>
               </div>
 
