@@ -61,17 +61,30 @@ const Hero = () => {
 
               {/* CTA Button */}
               <div className="pt-4">
-                <Button 
-                  size="lg" 
-                  className="w-full md:w-auto text-lg px-12 py-7 bg-gradient-to-r from-white to-primary/80 text-background font-bold rounded-full shadow-lg hover:shadow-[0_0_30px_rgba(0,217,163,0.5)] transition-all duration-300 animate-pulse-slow group relative overflow-hidden"
+                <button
                   onClick={scrollToEnroll}
+                  className="relative group border-none bg-transparent p-0 outline-none cursor-pointer font-sans font-semibold text-base w-full md:w-auto"
                 >
-                  <span className="relative z-10">Quero participar da mentoria</span>
-                  <svg className="relative z-10 inline-block ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                  <div className="absolute inset-0 bg-gradient-to-r from-white via-primary/60 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </Button>
+                  <span className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-25 rounded-full transform translate-y-0.5 transition duration-[600ms] ease-[cubic-bezier(0.3,0.7,0.4,1)] group-hover:translate-y-1 group-hover:duration-[250ms] group-active:translate-y-px"></span>
+
+                  <span className="absolute top-0 left-0 w-full h-full rounded-full bg-gradient-to-l from-background via-muted to-background"></span>
+
+                  <div className="relative flex items-center justify-center py-4 px-12 text-lg text-background rounded-full transform -translate-y-1 bg-gradient-to-r from-white via-primary/80 to-primary gap-3 transition duration-[600ms] ease-[cubic-bezier(0.3,0.7,0.4,1)] group-hover:-translate-y-1.5 group-hover:duration-[250ms] group-active:-translate-y-0.5 brightness-100 group-hover:brightness-110 animate-pulse-slow">
+                    <span className="select-none font-bold">Quero participar da mentoria</span>
+
+                    <svg
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      className="w-5 h-5 transition duration-250 group-hover:translate-x-1"
+                    >
+                      <path
+                        clipRule="evenodd"
+                        d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                        fillRule="evenodd"
+                      ></path>
+                    </svg>
+                  </div>
+                </button>
               </div>
             </div>
           </div>
