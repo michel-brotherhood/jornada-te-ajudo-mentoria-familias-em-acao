@@ -7,25 +7,29 @@ const ForWho = () => {
       icon: Heart,
       title: "Mães Atípicas",
       description: "Que se sentem perdidas e querem clareza para ajudar seus filhos",
-      color: "text-coral"
+      color: "text-[#cb71bc]",
+      bgGradient: "from-[#cb71bc]/10 to-[#cb71bc]/5"
     },
     {
       icon: Users,
       title: "Pais e Cuidadores",
       description: "Que buscam estratégias práticas para o dia a dia",
-      color: "text-primary"
+      color: "text-primary",
+      bgGradient: "from-primary/10 to-primary/5"
     },
     {
       icon: Stethoscope,
       title: "Famílias em Transição",
       description: "Com diagnóstico recente ou em processo de investigação",
-      color: "text-secondary"
+      color: "text-[#cb71bc]",
+      bgGradient: "from-[#cb71bc]/10 to-[#cb71bc]/5"
     },
     {
       icon: GraduationCap,
       title: "Quem Busca Evolução",
       description: "E quer uma maternidade mais leve, consciente e assertiva",
-      color: "text-accent"
+      color: "text-primary",
+      bgGradient: "from-primary/10 to-primary/5"
     }
   ];
 
@@ -34,7 +38,7 @@ const ForWho = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center mb-10 md:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 px-2">
-            Para quem é <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">esta mentoria</span>
+            Para quem é <span className="bg-gradient-to-r from-primary via-[#cb71bc] to-primary bg-clip-text text-transparent">esta mentoria</span>
           </h2>
           <p className="text-base md:text-lg text-muted-foreground px-2 leading-relaxed">
             A Mentoria Família em Ação foi criada para famílias que desejam compreender, agir e transformar a jornada atípica com segurança e propósito.
@@ -49,7 +53,7 @@ const ForWho = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="flex flex-col items-center text-center">
-                <div className={`mb-4 p-4 rounded-full bg-gradient-to-br from-primary/10 to-primary/5 ${item.color} animate-float-icon animate-glow-pulse shadow-lg`}>
+                <div className={`mb-4 p-4 rounded-full bg-gradient-to-br ${item.bgGradient} ${item.color} animate-float-icon animate-glow-pulse shadow-lg`}>
                   <item.icon className="w-8 h-8" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-background">{item.title}</h3>

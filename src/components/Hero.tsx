@@ -42,7 +42,7 @@ const Hero = () => {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                 <span className="text-foreground">Mentoria</span>
                 <br />
-                <span className="text-primary drop-shadow-[0_0_20px_rgba(0,217,163,0.5)]">Família em Ação</span>
+                <span className="bg-gradient-to-r from-primary via-[#cb71bc] to-primary bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(203,113,188,0.5)]">Família em Ação</span>
               </h1>
 
               <div className="space-y-4 text-base md:text-lg text-muted-foreground">

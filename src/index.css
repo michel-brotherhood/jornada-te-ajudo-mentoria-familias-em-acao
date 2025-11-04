@@ -26,6 +26,9 @@ All colors MUST be HSL.
 
     --accent: 165 100% 50%; /* Bright Neon Accent */
     --accent-foreground: 0 0% 8%;
+    
+    --brand: 310 45% 62%; /* Light Purple from Logo #cb71bc */
+    --brand-foreground: 0 0% 98%;
 
     --coral: 350 75% 55%; /* Coral - kept for warmth */
     --coral-foreground: 0 0% 98%;
@@ -88,6 +91,9 @@ All colors MUST be HSL.
 
     --accent: 165 100% 50%;
     --accent-foreground: 0 0% 8%;
+    
+    --brand: 310 45% 62%;
+    --brand-foreground: 0 0% 98%;
 
     --coral: 350 75% 60%;
     --coral-foreground: 0 0% 98%;
