@@ -21,7 +21,7 @@ const Hero = () => {
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
             {/* Left: Photo */}
             <div className="flex justify-center md:justify-end animate-fade-in order-2 md:order-1">
-              <div className="relative w-full max-w-md">
+              <div className="relative w-full max-w-sm md:max-w-xs">
                 {/* Neon glow effect */}
                 <div className="absolute inset-0 bg-primary/10 rounded-2xl blur-2xl"></div>
                 <img 
@@ -69,7 +69,7 @@ const Hero = () => {
 
                   <span className="absolute top-0 left-0 w-full h-full rounded-full bg-gradient-to-l from-background via-muted to-background"></span>
 
-                  <div className="relative flex items-center justify-center py-4 px-12 text-lg text-background rounded-full transform -translate-y-1 bg-gradient-to-r from-white via-primary/80 to-primary gap-3 transition duration-[600ms] ease-[cubic-bezier(0.3,0.7,0.4,1)] group-hover:-translate-y-1.5 group-hover:duration-[250ms] group-active:-translate-y-0.5 brightness-100 group-hover:brightness-110 animate-pulse-slow">
+                  <div className="relative flex items-center justify-center py-4 px-12 text-sm md:text-lg text-background rounded-full transform -translate-y-1 bg-gradient-to-r from-white via-primary/80 to-primary gap-3 transition duration-[600ms] ease-[cubic-bezier(0.3,0.7,0.4,1)] group-hover:-translate-y-1.5 group-hover:duration-[250ms] group-active:-translate-y-0.5 brightness-100 group-hover:brightness-110 animate-pulse-slow">
                     <span className="select-none font-bold">Quero participar da mentoria</span>
 
                     <svg
