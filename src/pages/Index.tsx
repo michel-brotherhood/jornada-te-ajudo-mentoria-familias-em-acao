@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import ForWho from "@/components/ForWho";
-import Benefits from "@/components/Benefits";
+import HowItWorks from "@/components/HowItWorks";
+import Bonus from "@/components/Bonus";
 import WhyDifferent from "@/components/WhyDifferent";
 import About from "@/components/About";
 import Testimonials from "@/components/Testimonials";
@@ -14,7 +15,8 @@ const Index = () => {
     <div className="min-h-screen">
       <Hero />
       <ForWho />
-      <Benefits />
+      <HowItWorks />
+      <Bonus />
       <WhyDifferent />
       <About />
       <Testimonials />
