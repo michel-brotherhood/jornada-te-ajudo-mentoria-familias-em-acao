@@ -63,7 +63,7 @@ const Hero = () => {
               <div className="pt-4">
                 <Button 
                   size="lg" 
-                  className="w-full md:w-auto text-lg px-12 py-7 bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_100%] hover:bg-right text-primary-foreground font-bold shadow-[0_0_40px_rgba(0,217,163,0.5)] hover:shadow-[0_0_60px_rgba(0,217,163,0.7)] transition-all duration-500 animate-pulse-slow"
+                  className="w-full md:w-auto text-lg px-12 py-7 bg-gradient-to-r from-white via-primary/30 to-white text-background font-bold rounded-full shadow-lg hover:shadow-[0_0_30px_rgba(0,217,163,0.4)] transition-all duration-300 animate-pulse-slow border border-primary/20"
                   onClick={scrollToEnroll}
                 >
                   Quero participar da mentoria
