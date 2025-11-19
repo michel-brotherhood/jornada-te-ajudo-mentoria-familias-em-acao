@@ -1,14 +1,53 @@
+# Política de Robots - JornadaTEAjudo
+# Otimizado para melhor indexação nos mecanismos de busca
+
+# Google Bot
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 0
 
+# Bing Bot
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 0
 
+# Twitter Bot
 User-agent: Twitterbot
 Allow: /
 
+# Facebook Bot
 User-agent: facebookexternalhit
 Allow: /
 
+# Instagram Bot
+User-agent: Instagram
+Allow: /
+
+# LinkedIn Bot
+User-agent: LinkedInBot
+Allow: /
+
+# WhatsApp Bot
+User-agent: WhatsApp
+Allow: /
+
+# Yandex Bot
+User-agent: Yandex
+Allow: /
+
+# DuckDuckGo Bot
+User-agent: DuckDuckBot
+Allow: /
+
+# Regra geral para todos os outros bots
 User-agent: *
 Allow: /
+Crawl-delay: 1
+
+# Sitemap
+Sitemap: https://jornadateajudo.lovable.app/sitemap.xml
+
+# Arquivos e diretórios que não devem ser indexados
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /node_modules/
