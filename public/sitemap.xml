@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Página Principal -->
+  <url>
+    <loc>https://jornadateajudo.lovable.app/</loc>
+    <lastmod>2025-11-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://jornadateajudo.lovable.app/whatsapp-icon.ico</image:loc>
+      <image:title>JornadaTEAjudo - Mentoria Família em Ação</image:title>
+      <image:caption>Mentoria especializada em autismo para mães atípicas com Carol Magalhães</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Seção Sobre -->
+  <url>
+    <loc>https://jornadateajudo.lovable.app/#about</loc>
+    <lastmod>2025-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Seção Para Quem É -->
+  <url>
+    <loc>https://jornadateajudo.lovable.app/#for-who</loc>
+    <lastmod>2025-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Seção Como Funciona -->
+  <url>
+    <loc>https://jornadateajudo.lovable.app/#how-it-works</loc>
+    <lastmod>2025-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Seção Por Que É Diferente -->
+  <url>
+    <loc>https://jornadateajudo.lovable.app/#why-different</loc>
+    <lastmod>2025-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Seção Depoimentos -->
+  <url>
+    <loc>https://jornadateajudo.lovable.app/#testimonials</loc>
+    <lastmod>2025-11-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Seção Inscrição/CTA -->
+  <url>
+    <loc>https://jornadateajudo.lovable.app/#enroll</loc>
+    <lastmod>2025-11-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+</urlset>
