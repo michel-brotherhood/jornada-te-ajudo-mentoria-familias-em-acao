@@ -54,10 +54,12 @@ const Hero = () => {
                 )}
                 
                 {/* Centered audio badge - only show if muted */}
-                {isMuted && !videoError && !isLoading && (
+                <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 transition-all duration-500 ${
+                  isMuted && !videoError && !isLoading ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'
+                }`}>
                   <button
                     onClick={toggleMute}
-                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 bg-primary hover:bg-primary/90 text-background px-6 py-4 rounded-2xl transition-all duration-300 hover:scale-105 shadow-2xl border-2 border-background/20 animate-pulse cursor-pointer group"
+                    className="bg-primary hover:bg-primary/90 text-background px-6 py-4 rounded-2xl transition-all duration-300 hover:scale-105 shadow-2xl border-2 border-background/20 animate-pulse cursor-pointer group"
                     aria-label="Clique para ativar o som"
                   >
                     <div className="flex flex-col items-center gap-2">
@@ -66,7 +68,7 @@ const Hero = () => {
                       <span className="text-sm font-semibold">para ativar o som</span>
                     </div>
                   </button>
-                )}
+                </div>
                 
                 {/* Neon glow effect */}
                 <div className="absolute inset-0 bg-primary/10 rounded-2xl blur-2xl"></div>
