@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo-teajudo.webp";
-import carolPhoto from "@/assets/carol-hero.jpeg";
+import carolVideo from "@/assets/carol-chamada-mentoria.mp4";
 
 const Hero = () => {
   const scrollToEnroll = () => {
@@ -19,15 +19,23 @@ const Hero = () => {
         {/* Main Content */}
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-            {/* Left: Photo */}
+            {/* Left: Video */}
             <div className="flex justify-center md:justify-end animate-fade-in order-2 md:order-1">
               <div className="relative w-full max-w-sm md:max-w-xs">
+                {/* Notice to play with sound */}
+                <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-10 bg-primary/90 text-background px-4 py-2 rounded-full text-xs md:text-sm font-semibold shadow-lg animate-pulse-slow">
+                  🔊 Ative o som
+                </div>
                 {/* Neon glow effect */}
                 <div className="absolute inset-0 bg-primary/10 rounded-2xl blur-2xl"></div>
-                <img 
-                  src={carolPhoto} 
-                  alt="Carol Magalhães - Mentora" 
+                <video 
+                  src={carolVideo}
+                  autoPlay
+                  loop
+                  muted={false}
+                  playsInline
                   className="relative rounded-2xl w-full h-auto object-cover border border-primary/30 shadow-[0_0_60px_rgba(0,217,163,0.25)]"
+                  aria-label="Vídeo de apresentação da Carol Magalhães"
                 />
               </div>
             </div>
