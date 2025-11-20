@@ -59,7 +59,7 @@ const Hero = () => {
                 }`}>
                   <button
                     onClick={toggleMute}
-                    className="bg-primary hover:bg-primary/90 text-background px-6 py-4 rounded-2xl transition-all duration-300 hover:scale-105 shadow-2xl border-2 border-background/20 animate-pulse cursor-pointer group"
+                    className="bg-[#cb71bc] hover:bg-[#cb71bc]/90 text-background px-6 py-4 rounded-2xl transition-all duration-300 hover:scale-105 shadow-2xl border-2 border-background/20 cursor-pointer group"
                     aria-label="Clique para ativar o som"
                   >
                     <div className="flex flex-col items-center gap-2">
