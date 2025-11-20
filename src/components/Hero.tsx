@@ -1,11 +1,13 @@
 import { Button } from "@/components/ui/button";
-import { Volume2, VolumeX } from "lucide-react";
+import { Volume2, VolumeX, Play } from "lucide-react";
 import { useState, useRef } from "react";
 import logo from "@/assets/logo-teajudo.webp";
 import carolVideo from "@/assets/carol-chamada-mentoria.mp4";
+import carolFallback from "@/assets/carol-hero.jpeg";
 
 const Hero = () => {
   const [isMuted, setIsMuted] = useState(true);
+  const [videoError, setVideoError] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const scrollToEnroll = () => {
@@ -17,6 +19,10 @@ const Hero = () => {
       videoRef.current.muted = !isMuted;
       setIsMuted(!isMuted);
     }
+  };
+
+  const handleVideoError = () => {
+    setVideoError(true);
   };
 
   return (
@@ -31,33 +37,54 @@ const Hero = () => {
         {/* Main Content */}
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-            {/* Left: Video */}
+            {/* Left: Video/Image */}
             <div className="flex justify-center md:justify-end animate-fade-in order-2 md:order-1">
               <div className="relative w-full max-w-sm md:max-w-xs">
-                {/* Audio toggle button */}
-                <button
-                  onClick={toggleMute}
-                  className="absolute top-4 right-4 z-10 bg-background/80 backdrop-blur-sm hover:bg-background text-foreground p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-lg border border-primary/30"
-                  aria-label={isMuted ? "Ativar som" : "Desativar som"}
-                >
-                  {isMuted ? (
-                    <VolumeX className="w-5 h-5 text-muted-foreground" />
-                  ) : (
-                    <Volume2 className="w-5 h-5 text-primary animate-pulse" />
-                  )}
-                </button>
+                {!videoError && (
+                  <>
+                    {/* Autoplay indicator badge */}
+                    <div className="absolute top-4 left-4 z-10 bg-primary/90 backdrop-blur-sm text-background px-3 py-1.5 rounded-full text-xs font-semibold shadow-lg flex items-center gap-1.5 animate-pulse-slow">
+                      <Play className="w-3 h-3 fill-background" />
+                      <span>Reproduzindo</span>
+                    </div>
+                    
+                    {/* Audio toggle button */}
+                    <button
+                      onClick={toggleMute}
+                      className="absolute top-4 right-4 z-10 bg-background/80 backdrop-blur-sm hover:bg-background text-foreground p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-lg border border-primary/30"
+                      aria-label={isMuted ? "Ativar som" : "Desativar som"}
+                    >
+                      {isMuted ? (
+                        <VolumeX className="w-5 h-5 text-muted-foreground" />
+                      ) : (
+                        <Volume2 className="w-5 h-5 text-primary animate-pulse" />
+                      )}
+                    </button>
+                  </>
+                )}
+                
                 {/* Neon glow effect */}
                 <div className="absolute inset-0 bg-primary/10 rounded-2xl blur-2xl"></div>
-                <video 
-                  ref={videoRef}
-                  src={carolVideo}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="relative rounded-2xl w-full h-auto object-cover border border-primary/30 shadow-[0_0_60px_rgba(0,217,163,0.25)]"
-                  aria-label="Vídeo de apresentação da Carol Magalhães"
-                />
+                
+                {videoError ? (
+                  <img 
+                    src={carolFallback} 
+                    alt="Carol Magalhães - Mentora" 
+                    className="relative rounded-2xl w-full h-auto object-cover border border-primary/30 shadow-[0_0_60px_rgba(0,217,163,0.25)]"
+                  />
+                ) : (
+                  <video 
+                    ref={videoRef}
+                    src={carolVideo}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    onError={handleVideoError}
+                    className="relative rounded-2xl w-full h-auto object-cover border border-primary/30 shadow-[0_0_60px_rgba(0,217,163,0.25)]"
+                    aria-label="Vídeo de apresentação da Carol Magalhães"
+                  />
+                )}
               </div>
             </div>
 
