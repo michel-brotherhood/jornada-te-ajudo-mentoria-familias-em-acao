@@ -59,9 +59,9 @@ const CTA = () => {
               </div>
 
               <div className="bg-muted/50 rounded-lg p-4 md:p-6">
-                <h3 className="font-bold text-lg mb-2">💬 Próximos passos</h3>
+                <h3 className="font-bold text-lg mb-2">💬 Lista de Espera</h3>
                 <p className="text-sm sm:text-base text-muted-foreground mb-4">
-                  Se você sente que está pronta para viver essa transformação, clique no botão abaixo e preencha o formulário de interesse.
+                  As vagas são limitadas! Entre na lista de espera e garanta sua prioridade para a próxima turma.
                 </p>
                 <p className="text-xs sm:text-sm text-muted-foreground italic">
                   Esse é o primeiro passo para se tornar uma mãe atípica mais confiante, tranquila e preparada para conduzir a evolução do seu filho(a) — com amor e ação. 💜
@@ -69,20 +69,21 @@ const CTA = () => {
               </div>
               
               <a 
-                href="https://pay.hotmart.com/Y102367809O?sck=HOTMART_PRODUCT_PAGE&off=usezyyql&hotfeature=32&bid=1761836693512"
+                href="https://wa.me/5562992563876?text=Olá!%20Tenho%20interesse%20na%20Mentoria%20Família%20em%20Ação%20e%20gostaria%20de%20entrar%20na%20lista%20de%20espera."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block"
               >
                 <Button 
                   size="lg" 
-                  className="w-full text-base sm:text-lg md:text-xl px-8 sm:px-10 md:px-12 py-6 sm:py-7 md:py-8 bg-gradient-to-r from-primary via-secondary to-accent hover:opacity-90 transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl font-bold"
+                  className="w-full text-sm sm:text-base md:text-lg lg:text-xl px-4 sm:px-8 md:px-12 py-5 sm:py-6 md:py-8 bg-gradient-to-r from-primary via-secondary to-accent hover:opacity-90 transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl font-bold leading-tight"
                 >
-                  Quero participar da Mentoria Família em Ação
+                  <span className="block sm:hidden">Entrar na Lista de Espera</span>
+                  <span className="hidden sm:block">Quero Entrar na Lista de Espera da Mentoria</span>
                 </Button>
               </a>
               <p className="text-xs sm:text-sm text-muted-foreground px-4">
-                Após preencher o formulário, entraremos em contato com você para os próximos passos
+                Você será direcionado para o WhatsApp para garantir sua vaga
               </p>
             </div>
           </Card>
