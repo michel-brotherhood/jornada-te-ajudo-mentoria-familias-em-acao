@@ -62,9 +62,17 @@ const Hero = () => {
                     className="bg-[#cb71bc] hover:bg-[#cb71bc]/90 text-background px-6 py-4 rounded-2xl transition-all duration-300 hover:scale-105 shadow-2xl border-2 border-background/20 cursor-pointer group"
                     aria-label="Clique para ativar o som"
                   >
-                    <div className="flex flex-col items-center gap-2">
+                    <div className="flex flex-col items-center gap-3">
                       <span className="text-sm font-semibold">Clique aqui</span>
-                      <VolumeX className="w-8 h-8" strokeWidth={2.5} />
+                      <div className="relative flex items-center gap-2">
+                        <VolumeX className="w-8 h-8" strokeWidth={2.5} />
+                        {/* Animated sound waves */}
+                        <div className="flex items-center gap-0.5">
+                          <div className="w-0.5 h-3 bg-background rounded-full animate-[wave_0.8s_ease-in-out_infinite]" style={{ animationDelay: '0s' }}></div>
+                          <div className="w-0.5 h-4 bg-background rounded-full animate-[wave_0.8s_ease-in-out_infinite]" style={{ animationDelay: '0.1s' }}></div>
+                          <div className="w-0.5 h-5 bg-background rounded-full animate-[wave_0.8s_ease-in-out_infinite]" style={{ animationDelay: '0.2s' }}></div>
+                        </div>
+                      </div>
                       <span className="text-sm font-semibold">para ativar o som</span>
                     </div>
                   </button>
