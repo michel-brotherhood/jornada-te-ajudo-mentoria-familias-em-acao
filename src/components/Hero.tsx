@@ -8,6 +8,7 @@ import carolFallback from "@/assets/carol-hero.jpeg";
 const Hero = () => {
   const [isMuted, setIsMuted] = useState(true);
   const [videoError, setVideoError] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const scrollToEnroll = () => {
@@ -16,13 +17,18 @@ const Hero = () => {
 
   const toggleMute = () => {
     if (videoRef.current) {
-      videoRef.current.muted = !isMuted;
-      setIsMuted(!isMuted);
+      videoRef.current.muted = false;
+      setIsMuted(false);
     }
   };
 
   const handleVideoError = () => {
     setVideoError(true);
+    setIsLoading(false);
+  };
+
+  const handleVideoLoad = () => {
+    setIsLoading(false);
   };
 
   return (
@@ -40,27 +46,26 @@ const Hero = () => {
             {/* Left: Video/Image */}
             <div className="flex justify-center md:justify-end animate-fade-in order-2 md:order-1">
               <div className="relative w-full max-w-sm md:max-w-xs">
-                {!videoError && (
-                  <>
-                    {/* Autoplay indicator badge */}
-                    <div className="absolute top-4 left-4 z-10 bg-primary/90 backdrop-blur-sm text-background px-3 py-1.5 rounded-full text-xs font-semibold shadow-lg flex items-center gap-1.5 animate-pulse-slow">
-                      <Play className="w-3 h-3 fill-background" />
-                      <span>Reproduzindo</span>
+                {/* Loading skeleton */}
+                {isLoading && !videoError && (
+                  <div className="absolute inset-0 z-20 bg-muted/50 rounded-2xl animate-pulse flex items-center justify-center">
+                    <div className="text-muted-foreground">Carregando...</div>
+                  </div>
+                )}
+                
+                {/* Centered audio badge - only show if muted */}
+                {isMuted && !videoError && !isLoading && (
+                  <button
+                    onClick={toggleMute}
+                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 bg-primary hover:bg-primary/90 text-background px-6 py-4 rounded-2xl transition-all duration-300 hover:scale-105 shadow-2xl border-2 border-background/20 animate-pulse cursor-pointer group"
+                    aria-label="Clique para ativar o som"
+                  >
+                    <div className="flex flex-col items-center gap-2">
+                      <span className="text-sm font-semibold">Clique aqui</span>
+                      <VolumeX className="w-8 h-8" strokeWidth={2.5} />
+                      <span className="text-sm font-semibold">para ativar o som</span>
                     </div>
-                    
-                    {/* Audio toggle button */}
-                    <button
-                      onClick={toggleMute}
-                      className="absolute top-4 right-4 z-10 bg-background/80 backdrop-blur-sm hover:bg-background text-foreground p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-lg border border-primary/30"
-                      aria-label={isMuted ? "Ativar som" : "Desativar som"}
-                    >
-                      {isMuted ? (
-                        <VolumeX className="w-5 h-5 text-muted-foreground" />
-                      ) : (
-                        <Volume2 className="w-5 h-5 text-primary animate-pulse" />
-                      )}
-                    </button>
-                  </>
+                  </button>
                 )}
                 
                 {/* Neon glow effect */}
@@ -81,6 +86,7 @@ const Hero = () => {
                     muted
                     playsInline
                     onError={handleVideoError}
+                    onLoadedData={handleVideoLoad}
                     className="relative rounded-2xl w-full h-auto object-cover border border-primary/30 shadow-[0_0_60px_rgba(0,217,163,0.25)]"
                     aria-label="Vídeo de apresentação da Carol Magalhães"
                   />
