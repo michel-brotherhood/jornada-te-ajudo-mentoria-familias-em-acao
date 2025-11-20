@@ -1,10 +1,22 @@
 import { Button } from "@/components/ui/button";
+import { Volume2, VolumeX } from "lucide-react";
+import { useState, useRef } from "react";
 import logo from "@/assets/logo-teajudo.webp";
 import carolVideo from "@/assets/carol-chamada-mentoria.mp4";
 
 const Hero = () => {
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
   const scrollToEnroll = () => {
     document.getElementById('enroll')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted;
+      setIsMuted(!isMuted);
+    }
   };
 
   return (
@@ -22,17 +34,26 @@ const Hero = () => {
             {/* Left: Video */}
             <div className="flex justify-center md:justify-end animate-fade-in order-2 md:order-1">
               <div className="relative w-full max-w-sm md:max-w-xs">
-                {/* Notice to play with sound */}
-                <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-10 bg-primary/90 text-background px-4 py-2 rounded-full text-xs md:text-sm font-semibold shadow-lg animate-pulse-slow">
-                  🔊 Ative o som
-                </div>
+                {/* Audio toggle button */}
+                <button
+                  onClick={toggleMute}
+                  className="absolute top-4 right-4 z-10 bg-background/80 backdrop-blur-sm hover:bg-background text-foreground p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-lg border border-primary/30"
+                  aria-label={isMuted ? "Ativar som" : "Desativar som"}
+                >
+                  {isMuted ? (
+                    <VolumeX className="w-5 h-5 text-muted-foreground" />
+                  ) : (
+                    <Volume2 className="w-5 h-5 text-primary animate-pulse" />
+                  )}
+                </button>
                 {/* Neon glow effect */}
                 <div className="absolute inset-0 bg-primary/10 rounded-2xl blur-2xl"></div>
                 <video 
+                  ref={videoRef}
                   src={carolVideo}
                   autoPlay
                   loop
-                  muted={false}
+                  muted
                   playsInline
                   className="relative rounded-2xl w-full h-auto object-cover border border-primary/30 shadow-[0_0_60px_rgba(0,217,163,0.25)]"
                   aria-label="Vídeo de apresentação da Carol Magalhães"
