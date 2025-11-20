@@ -129,7 +129,18 @@ All colors MUST be HSL.
 }
 
 @layer utilities {
-  @keyframes float-gentle {
+@keyframes wave {
+  0%, 100% {
+    transform: scaleY(0.5);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@keyframes float-gentle {
     0%, 100% {
       transform: translateY(0px);
     }
