@@ -44,7 +44,7 @@ const Hero = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
             {/* Left: Video/Image */}
-            <div className="flex justify-center md:justify-end animate-fade-in order-2 md:order-1">
+            <div className="flex justify-center md:justify-end animate-fade-in order-2">
               <div className="relative w-full max-w-sm md:max-w-xs">
                 {/* Loading skeleton */}
                 {isLoading && !videoError && (
@@ -54,23 +54,23 @@ const Hero = () => {
                 )}
                 
                 {/* Centered audio badge - only show if muted */}
-                <div className={`absolute bottom-6 left-1/2 transform -translate-x-1/2 z-10 transition-all duration-500 ${
+                <div className={`absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 z-10 transition-all duration-500 ${
                   isMuted && !videoError && !isLoading ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'
                 }`}>
                   <button
                     onClick={toggleMute}
-                    className="bg-[#cb71bc] hover:bg-[#cb71bc]/90 text-background px-4 py-3 rounded-xl transition-all duration-300 hover:scale-105 shadow-xl border border-background/20 cursor-pointer group"
+                    className="bg-[#cb71bc]/95 hover:bg-[#cb71bc] backdrop-blur-md text-background px-3 py-2 md:px-4 md:py-3 rounded-lg md:rounded-xl transition-all duration-300 hover:scale-105 shadow-xl border border-background/20 cursor-pointer"
                     aria-label="Clique para ativar o som"
                   >
-                    <div className="flex items-center gap-2">
-                      <span className="text-xs font-semibold whitespace-nowrap">Clique para ativar o som</span>
+                    <div className="flex items-center gap-1.5 md:gap-2">
+                      <span className="text-[10px] md:text-xs font-semibold whitespace-nowrap">Clique para ativar o som</span>
                       <div className="relative flex items-center gap-1">
-                        <VolumeX className="w-5 h-5" strokeWidth={2.5} />
+                        <VolumeX className="w-4 h-4 md:w-5 md:h-5" strokeWidth={2.5} />
                         {/* Animated sound waves */}
                         <div className="flex items-center gap-0.5">
-                          <div className="w-0.5 h-2 bg-background rounded-full animate-[wave_0.8s_ease-in-out_infinite]" style={{ animationDelay: '0s' }}></div>
-                          <div className="w-0.5 h-3 bg-background rounded-full animate-[wave_0.8s_ease-in-out_infinite]" style={{ animationDelay: '0.1s' }}></div>
-                          <div className="w-0.5 h-4 bg-background rounded-full animate-[wave_0.8s_ease-in-out_infinite]" style={{ animationDelay: '0.2s' }}></div>
+                          <div className="w-0.5 h-1.5 md:h-2 bg-background rounded-full animate-[wave_0.8s_ease-in-out_infinite]" style={{ animationDelay: '0s' }}></div>
+                          <div className="w-0.5 h-2 md:h-3 bg-background rounded-full animate-[wave_0.8s_ease-in-out_infinite]" style={{ animationDelay: '0.1s' }}></div>
+                          <div className="w-0.5 h-2.5 md:h-4 bg-background rounded-full animate-[wave_0.8s_ease-in-out_infinite]" style={{ animationDelay: '0.2s' }}></div>
                         </div>
                       </div>
                     </div>
@@ -104,7 +104,7 @@ const Hero = () => {
             </div>
 
             {/* Right: Copy */}
-            <div className="space-y-6 animate-fade-in order-1 md:order-2 text-center md:text-left">
+            <div className="space-y-6 animate-fade-in order-1 text-center md:text-left">
               {/* Logo above title */}
               <div className="flex justify-center md:justify-start mb-4">
                 <img src={logo} alt="Jornada TEAjudo" className="h-12 md:h-16 w-auto opacity-90" />
