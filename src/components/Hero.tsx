@@ -43,8 +43,8 @@ const Hero = () => {
         {/* Main Content */}
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-            {/* Left: Video/Image */}
-            <div className="flex justify-center md:justify-end animate-fade-in order-2">
+            {/* Left: Video/Image - Desktop only */}
+            <div className="hidden md:flex justify-center md:justify-end animate-fade-in order-2">
               <div className="relative w-full max-w-sm md:max-w-xs">
                 {/* Loading skeleton */}
                 {isLoading && !videoError && (
@@ -115,6 +115,64 @@ const Hero = () => {
                 <br />
                 <span className="bg-gradient-to-r from-primary via-[#cb71bc] to-primary bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(203,113,188,0.5)]">Família em Ação</span>
               </h1>
+
+              {/* Video on mobile - shown here */}
+              <div className="md:hidden flex justify-center animate-fade-in mt-8 mb-8">
+                <div className="relative w-full max-w-sm">
+                  {/* Loading skeleton */}
+                  {isLoading && !videoError && (
+                    <div className="absolute inset-0 z-20 bg-muted/50 rounded-2xl animate-pulse flex items-center justify-center">
+                      <div className="text-muted-foreground">Carregando...</div>
+                    </div>
+                  )}
+                  
+                  {/* Centered audio badge - only show if muted */}
+                  <div className={`absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10 transition-all duration-500 ${
+                    isMuted && !videoError && !isLoading ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'
+                  }`}>
+                    <button
+                      onClick={toggleMute}
+                      className="bg-[#cb71bc]/95 hover:bg-[#cb71bc] backdrop-blur-md text-background px-3 py-2 rounded-lg transition-all duration-300 hover:scale-105 shadow-xl border border-background/20 cursor-pointer"
+                      aria-label="Clique para ativar o som"
+                    >
+                      <div className="flex items-center gap-1.5">
+                        <span className="text-[10px] font-semibold whitespace-nowrap">Clique para ativar o som</span>
+                        <div className="relative flex items-center gap-1">
+                          <VolumeX className="w-4 h-4" strokeWidth={2.5} />
+                          <div className="flex items-center gap-0.5">
+                            <div className="w-0.5 h-1.5 bg-background rounded-full animate-[wave_0.8s_ease-in-out_infinite]" style={{ animationDelay: '0s' }}></div>
+                            <div className="w-0.5 h-2 bg-background rounded-full animate-[wave_0.8s_ease-in-out_infinite]" style={{ animationDelay: '0.1s' }}></div>
+                            <div className="w-0.5 h-2.5 bg-background rounded-full animate-[wave_0.8s_ease-in-out_infinite]" style={{ animationDelay: '0.2s' }}></div>
+                          </div>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                  
+                  <div className="absolute inset-0 bg-primary/10 rounded-2xl blur-2xl"></div>
+                  
+                  {videoError ? (
+                    <img 
+                      src={carolFallback} 
+                      alt="Carol Magalhães - Mentora" 
+                      className="relative rounded-2xl w-full h-auto object-cover border border-primary/30 shadow-[0_0_60px_rgba(0,217,163,0.25)]"
+                    />
+                  ) : (
+                    <video 
+                      ref={videoRef}
+                      src={carolVideo}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      onError={handleVideoError}
+                      onLoadedData={handleVideoLoad}
+                      className="relative rounded-2xl w-full h-auto object-cover border border-primary/30 shadow-[0_0_60px_rgba(0,217,163,0.25)]"
+                      aria-label="Vídeo de apresentação da Carol Magalhães"
+                    />
+                  )}
+                </div>
+              </div>
 
               <div className="space-y-4 text-base md:text-lg text-muted-foreground">
                 <p className="text-xl md:text-2xl font-semibold text-foreground">
