@@ -92,7 +92,7 @@ const Hero = () => {
                     src={carolVideo}
                     autoPlay
                     loop
-                    muted
+                    muted={isMuted}
                     playsInline
                     onError={handleVideoError}
                     onLoadedData={handleVideoLoad}
@@ -163,7 +163,7 @@ const Hero = () => {
                       src={carolVideo}
                       autoPlay
                       loop
-                      muted
+                      muted={isMuted}
                       playsInline
                       onError={handleVideoError}
                       onLoadedData={handleVideoLoad}
