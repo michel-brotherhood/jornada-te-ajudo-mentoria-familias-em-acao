@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Volume2, VolumeX, Play } from "lucide-react";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import logo from "@/assets/logo-teajudo.webp";
 import carolVideo from "@/assets/carol-chamada-mentoria.mp4";
 import carolFallback from "@/assets/carol-hero.jpeg";
@@ -9,7 +9,20 @@ const Hero = () => {
   const [isMuted, setIsMuted] = useState(true);
   const [videoError, setVideoError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [scrollY, setScrollY] = useState(0);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const videoContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const parallaxOffset = scrollY * 0.3;
 
   const scrollToEnroll = () => {
     document.getElementById('enroll')?.scrollIntoView({ behavior: 'smooth' });
@@ -45,7 +58,10 @@ const Hero = () => {
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
             {/* Left: Video/Image - Desktop only */}
             <div className="hidden md:flex justify-center md:justify-end animate-fade-in order-2">
-              <div className="relative w-full max-w-sm md:max-w-xs">
+              <div 
+                className="relative w-full max-w-sm md:max-w-xs transition-transform duration-300 ease-out"
+                style={{ transform: `translateY(${parallaxOffset}px)` }}
+              >
                 {/* Loading skeleton */}
                 {isLoading && !videoError && (
                   <div className="absolute inset-0 z-20 bg-muted/50 rounded-2xl animate-pulse flex items-center justify-center">
@@ -117,8 +133,12 @@ const Hero = () => {
               </h1>
 
               {/* Video on mobile - shown here */}
-              <div className="md:hidden flex justify-center animate-fade-in mt-8 mb-8">
-                <div className="relative w-full max-w-sm">
+              <div className="md:hidden flex justify-center animate-fade-in my-8">
+                <div 
+                  ref={videoContainerRef}
+                  className="relative w-full max-w-sm transition-transform duration-300 ease-out"
+                  style={{ transform: `translateY(${parallaxOffset}px)` }}
+                >
                   {/* Loading skeleton */}
                   {isLoading && !videoError && (
                     <div className="absolute inset-0 z-20 bg-muted/50 rounded-2xl animate-pulse flex items-center justify-center">
@@ -174,7 +194,7 @@ const Hero = () => {
                 </div>
               </div>
 
-              <div className="space-y-4 text-base md:text-lg text-muted-foreground">
+              <div className="space-y-4 text-base md:text-lg text-muted-foreground mt-6">
                 <p className="text-xl md:text-2xl font-semibold text-foreground">
                   Querida mãe atípica,
                 </p>
